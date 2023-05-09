@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Counting strings</title>
+        <style>
+            div{
+                text-align: center;
+
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+        <textarea rows="10" cols="40" id="word"></textarea><br>
+        <p id="show"></p>
+        <p id="coutwrd"></p>
+        <p id="vow"></p>
+        <p id="conso"></p>
+       <button onclick="count()" >C O U N T </button>
+    </div>
+        <script>
+       const count = () =>
+       {
+        let character = document.getElementById("word").value.length;
+        let wrd = document.getElementById("word").value;
+        wrd = wrd.match(/\w+/g);
+        wrd = wrd.length;
+        console.log(wrd);
+        let str = document.getElementById("word").value;
+        let vowel= "aeiou";
+        let count=0;
+        for(var x=0;x<str.length;x++){
+            for(var y=0;y<vowel.length;y++){
+                if(str[x]==vowel[y])
+                {
+                    count++;
+                }
+            }
+        }
+
+document.getElementById("vow").innerHTML = "Total vowel is = " +count+ "<br><br>Total Consonant is = " +(str.length-count);
+//document.getElementById("conso"),innerHTML = "Total Consonant is = " (character-count);
+ document.getElementById("show").innerHTML = "Total character is = " + character;
+ document.getElementById("coutwrd").innerHTML = "Total word is = " + wrd;
+
+       }
+    </script>
+    </body>
+</html>
